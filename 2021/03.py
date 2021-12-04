@@ -31,10 +31,11 @@ def part1():
     print(int(gr,2)*int(er,2))
 
 def orating(array,index):
-    retval=None
+    retval=""
     if len(array)==1:
         print(f"returning {array}")
-        retval=array[0]
+        print(int(array[0],2))
+        retval=array
         return retval
     else:
         atindex=[]
@@ -52,9 +53,38 @@ def orating(array,index):
         orating(nextarr,index+1)
     return retval
 
+def crating(array,index):
+    retval=""
+    if len(array)==1:
+        print(f"returning {array}")
+        print(int(array[0],2))
+        retval=array
+        return retval
+    else:
+        atindex=[]
+        for x in array:
+            atindex.append(int(x[index]))
+        tofind=0
+        if atindex.count(1) < atindex.count(0):
+            tofind=1
+        nextarr=[]
+        for x in array:
+            if int(x[index])==tofind:
+                nextarr.append(x)
+        szr=len(nextarr)
+        print(f"moving on! index {index}, size {szr}")
+        crating(nextarr,index+1)
+    return retval
+
+
+
 def part2():
     orat=orating(vals,0)
+    crat=crating(vals,0)
     print("orating: ",orat)
+    print("crating: ",crat)
+# couldn't get these to output for WHATEVE REASON
+# so I manually multiplied them like an ANIMAL and it worked
 
 #part1()
 part2()
