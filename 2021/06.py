@@ -16,7 +16,8 @@ def spawnFish(fishList,day):
                 fishList[i]-=1
         day-=1
         fishList+=newList
-        print(f"finished day {day}")
+        fishList.sort()
+        print(f"finished day {day} len {len(fishList)}")
         spawnFish(fishList,day)
     else:
         print(len(fishList))
@@ -32,7 +33,7 @@ def part1():
 
 def part2():
     print("part2")
-    finalArr=spawnFish(fish,256)
+    finalArr=spawnFish(fish,100)
 
 #part1()
 part2()
