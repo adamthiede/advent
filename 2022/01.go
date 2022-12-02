@@ -26,7 +26,6 @@ func p1(x []int) int{
 	val:=0
 	for i:=range x {
 		if x[i]==0 {
-			fmt.Printf("Had %d cals at %d \n",val,i)
 			if val>max {
 				max=val
 			}
@@ -44,7 +43,6 @@ func p2(x []int) int{
 	amts:=make([]int,0)
 	for i:=range x {
 		if x[i]==0 {
-			fmt.Printf("Had %d cals at %d \n",val,i)
 			amts=append(amts,val)
 			val=0
 		} else {
@@ -52,7 +50,6 @@ func p2(x []int) int{
 		}
 	}
 	sort.Sort(sort.IntSlice(amts))
-	psliceI(amts)
 	top3+=amts[len(amts)-1]+amts[len(amts)-2]+amts[len(amts)-3]
 	return top3
 }
@@ -71,7 +68,6 @@ func main() {
 		num[i], _ = strconv.Atoi(s)
 	}
 	//psliceS(txt)
-	psliceI(num)
 	//bkup:=make([]int, len(num))
 	//copy(bkup, num)
 	//psliceI(bkup)
